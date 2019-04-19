@@ -2,50 +2,26 @@
     <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" >
+            <li class="item border-bottom" v-for="item of list"
+        :key="item.id">
                 <div class="item-img-wrap">
-                <img class="item-img" src="https://imgs.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg" alt="">
+                <img class="item-img" :src="item.imgUrl" alt="">
                 </div>
                 <div class="item-info">
-                <p class="item-title">深圳小梅沙</p>
+                <p class="item-title">{{item.title}}</p>
                
-                <p class="item-desc">深圳小梅沙海海海洋公海海洋公海洋公园深圳小梅沙海洋公园</p>
+                <p class="item-desc">{{item.desc}}</p>
                 
                 </div>
             </li>
-            
-                <li class="item border-bottom" >
-                <div class="item-img-wrap">
-                <img class="item-img" src="https://imgs.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg" alt="">
-                </div>
-                <div class="item-info">
-                <p class="item-title">东部华侨城</p>
-               
-                <p class="item-desc">深圳小梅沙海海海洋公海海洋公海洋公园深圳小梅沙海洋公园</p>
-               
-                </div>
-            </li>
-
-                <li class="item border-bottom" >
-                <div class="item-img-wrap">
-                <img class="item-img" src="https://imgs.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg" alt="">
-                </div>
-                <div class="item-info">
-                <p class="item-title">园博园</p>
-               
-                <p class="item-desc">深圳小梅沙海海海洋公海海洋公海洋公园深圳小梅沙海洋公园</p>
-                
-                </div>
-            </li>
-            
-            
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-    name:'HomeRecommend'
+    name:'HomeRecommend',
+    props:{list:Array}
 }
 </script>
 

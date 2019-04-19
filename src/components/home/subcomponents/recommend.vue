@@ -2,32 +2,13 @@
     <div>
         <div class="recommend-title">猜你喜欢</div>
         <ul>
-            <li class="item border-bottom" >
-                <img class="item-img" src="https://imgs.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg" alt="">
+            <li class="item border-bottom" v-for="item of list"
+        :key="item.id">
+                <img class="item-img" :src="item.imgUrl" alt="">
                 <div class="item-info">
-                <p class="item-title">深圳小梅沙海洋公园深圳小梅沙海洋公园深圳小梅沙海洋公园</p>
+                <p class="item-title">{{item.title}}</p>
                
-                <p class="item-desc">深圳小梅沙海海海洋公海海洋公海洋公园深圳小梅沙海洋公园</p>
-                <button class="item-button">查看详情</button>
-                </div>
-            </li>
-
-            <li class="item border-bottom" >
-                <img class="item-img" src="https://imgs.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg" alt="">
-                <div class="item-info">
-                <p class="item-title">深圳小梅沙海洋公园深圳小梅沙海洋公园深圳小梅沙海洋公园</p>
-               
-                <p class="item-desc">深圳小梅沙海海海洋公海海洋公海洋公园深圳小梅沙海洋公园</p>
-                <button class="item-button">查看详情</button>
-                </div>
-            </li>
-
-            <li class="item border-bottom" >
-                <img class="item-img" src="https://imgs.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg" alt="">
-                <div class="item-info">
-                <p class="item-title">深圳小梅沙海洋公园深圳小梅沙海洋公园深圳小梅沙海洋公园</p>
-               
-                <p class="item-desc">深圳小梅沙海海海洋公海海洋公海洋公园深圳小梅沙海洋公园</p>
+                <p class="item-desc">{{item.desc}}</p>
                 <button class="item-button">查看详情</button>
                 </div>
             </li>
@@ -38,7 +19,8 @@
 
 <script>
 export default {
-    name:'HomeRecommend'
+    name:'HomeRecommend',
+    props:{list:Array}
 }
 </script>
 
